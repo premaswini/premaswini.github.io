@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kamatham Premaswini | Senior SEO & AI Search Strategist</title>
+  <meta name="description" content="Kamatham Premaswini is a Senior SEO and AI Search Strategist specializing in technical SEO, enterprise SEO, content strategy, GEO, AEO, local SEO, E-E-A-T, and organic growth.">
+  <style>
+    :root {
+      --bg: #f8f6f1;
+      --paper: #ffffff;
+      --ink: #121212;
+      --muted: #5f6570;
+      --soft: #ebe6dc;
+      --line: #ddd6c9;
+      --forest: #123f36;
+      --forest-2: #0d2f29;
+      --blue: #1f4ed8;
+      --coral: #d65d45;
+      --gold: #b48528;
+      --mint: #eaf5f0;
+      --sky: #edf3ff;
+      --rose: #fff0eb;
+      --shadow: 0 28px 80px rgba(18, 18, 18, 0.12);
+      --radius: 8px;
+      --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --display: Georgia, "Times New Roman", serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(18, 63, 54, 0.035) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(18, 63, 54, 0.03) 1px, transparent 1px),
+        var(--bg);
+      background-size: 72px 72px;
+      color: var(--ink);
+      font-family: var(--font);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img, video, svg { display: block; max-width: 100%; }
+    button, input, textarea, select { font: inherit; }
+    .wrap { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+
+    .skip-link {
+      position: absolute;
+      top: -60px;
+      left: 16px;
+      z-index: 50;
+      padding: 10px 14px;
+      background: var(--ink);
+      color: #fff;
+      border-radius: var(--radius);
+    }
+    .skip-link:focus { top: 16px; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid rgba(221, 214, 201, 0.86);
+      background: rgba(248, 246, 241, 0.9);
+      backdrop-filter: blur(16px);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 74px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: conic-gradient(from 130deg, var(--forest), var(--blue), var(--coral), var(--forest));
+      font-family: var(--display);
+      font-size: 18px;
+      box-shadow: 0 12px 28px rgba(18, 63, 54, 0.22);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border: 1px solid var(--ink);
+      border-radius: var(--radius);
+      background: var(--ink);
+      color: #fff;
+      font-weight: 900;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+      box-shadow: 0 12px 22px rgba(18, 18, 18, 0.13);
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 18px 30px rgba(18, 18, 18, 0.15); }
+    .btn.secondary { background: transparent; color: var(--ink); box-shadow: none; }
+    .btn.light { background: #fff; color: var(--ink); border-color: #fff; }
+    .btn.small { min-height: 38px; padding: 0 14px; font-size: 13px; }
+
+    .hero {
+      position: relative;
+      padding: 74px 0 34px;
+      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+    }
+    .hero:before {
+      content: "";
+      position: absolute;
+      width: 680px;
+      height: 680px;
+      right: -280px;
+      top: -340px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(31, 78, 216, 0.17), transparent 66%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(340px, 0.72fr);
+      gap: 44px;
+      align-items: center;
+    }
+    .eyebrow, .section-kicker {
+      color: var(--coral);
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .eyebrow:before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: var(--forest);
+    }
+    h1, h2 {
+      margin: 0;
+      font-family: var(--display);
+      letter-spacing: -0.045em;
+      line-height: 0.94;
+    }
+    h1 {
+      max-width: 880px;
+      font-size: clamp(48px, 7.6vw, 102px);
+    }
+    h2 {
+      max-width: 850px;
+      font-size: clamp(34px, 5vw, 62px);
+    }
+    h3 {
+      margin: 12px 0 8px;
+      font-size: 22px;
+      line-height: 1.18;
+      letter-spacing: -0.03em;
+    }
+    .hero-lede {
+      max-width: 760px;
+      margin: 24px 0 0;
+      color: #343840;
+      font-size: clamp(17px, 2vw, 22px);
+      line-height: 1.68;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 28px;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 0 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.7);
+      color: #30343a;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .hero-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .portrait {
+      width: 100%;
+      aspect-ratio: 4 / 4.85;
+      object-fit: cover;
+      object-position: center 17%;
+      background: var(--soft);
+    }
+    .availability {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: center;
+      padding: 18px;
+      border-top: 1px solid var(--line);
+    }
+    .availability b { display: block; }
+    .availability span { color: var(--muted); font-size: 13px; }
+    .status-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #19b36a;
+      box-shadow: 0 0 0 7px rgba(25, 179, 106, 0.16);
+    }
+    .quick-proof {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(120px, 1fr));
+      gap: 1px;
+      margin-top: 42px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--line);
+      overflow: hidden;
+    }
+    .proof-item {
+      min-height: 106px;
+      padding: 18px;
+      background: rgba(255, 255, 255, 0.82);
+    }
+    .proof-item strong {
+      display: block;
+      color: var(--forest);
+      font-family: var(--display);
+      font-size: 34px;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+    .proof-item span {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .ticker {
+      border-block: 1px solid var(--line);
+      background: var(--forest-2);
+      color: #fff;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .ticker-track {
+      display: inline-flex;
+      gap: 18px;
+      padding: 17px 0;
+      min-width: max-content;
+      animation: marquee 34s linear infinite;
+    }
+    .ticker:nth-of-type(2) .ticker-track { animation-duration: 42s; animation-direction: reverse; }
+    .ticker span {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .ticker span:after {
+      content: "";
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--coral);
+    }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    section { padding: 78px 0; }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 34px;
+    }
+    .section-lede {
+      max-width: 720px;
+      margin: 18px 0 0;
+      color: #3e434b;
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: minmax(340px, 0.92fr) minmax(0, 1.08fr);
+      gap: 34px;
+      align-items: center;
+    }
+    .video-shell {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #111;
+      box-shadow: var(--shadow);
+    }
+    .video-shell video {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      background: #111;
+    }
+    .video-label {
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      z-index: 1;
+      border-radius: 999px;
+      padding: 8px 10px;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--ink);
+      font-size: 11px;
+      font-weight: 950;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+    .media-copy {
+      display: grid;
+      gap: 18px;
+    }
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .mini-card, .card, .case-card, .quote, .faq-item {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+    }
+    .mini-card {
+      padding: 18px;
+      min-height: 126px;
+    }
+    .mini-card b {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--forest);
+    }
+    .mini-card span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .trust-strip {
+      padding: 24px 0;
+      border-block: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.56);
+    }
+    .trust-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+    .trust-title {
+      margin-right: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .client-chip {
+      padding: 9px 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .graph-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.06fr) minmax(320px, 0.94fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+    .graph-panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      padding: 26px;
+      overflow: hidden;
+    }
+    .graph-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+    .graph-title { font-weight: 950; letter-spacing: -0.02em; }
+    .graph-note {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+    .axis-label {
+      fill: #5f6570;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+    }
+    .grid-line { stroke: #e8e1d5; stroke-width: 1; }
+    .growth-line {
+      fill: none;
+      stroke: var(--forest);
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 850;
+      stroke-dashoffset: 850;
+      animation: drawLine 1.6s ease forwards;
+    }
+    .growth-area { fill: rgba(18, 63, 54, 0.09); }
+    .dot { fill: var(--coral); stroke: #fff; stroke-width: 4; }
+    .bar {
+      transform-box: fill-box;
+      transform-origin: bottom;
+      animation: rise 900ms ease forwards;
+    }
+    .bar:nth-of-type(1) { animation-delay: 70ms; }
+    .bar:nth-of-type(2) { animation-delay: 140ms; }
+    .bar:nth-of-type(3) { animation-delay: 210ms; }
+    .bar:nth-of-type(4) { animation-delay: 280ms; }
+    @keyframes drawLine { to { stroke-dashoffset: 0; } }
+    @keyframes rise { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+    .metric-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--line);
+      overflow: hidden;
+      margin-top: 18px;
+    }
+    .metric-cell {
+      min-height: 116px;
+      padding: 20px;
+      background: #fff;
+    }
+    .metric-cell b {
+      display: block;
+      color: var(--blue);
+      font-family: var(--display);
+      font-size: 36px;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+    .metric-cell span {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .card {
+      padding: 26px;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+    .card:hover, .case-card:hover, .quote:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 46px rgba(18, 18, 18, 0.08);
+    }
+    .card-index {
+      color: var(--coral);
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: 0.12em;
+    }
+    .card p, .case-card p, .quote p, .faq-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 18px;
+    }
+    .skill-list span {
+      border-radius: 999px;
+      padding: 6px 9px;
+      background: var(--mint);
+      color: var(--forest);
+      font-size: 11px;
+      font-weight: 950;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .ai-lab {
+      border-radius: var(--radius);
+      background: var(--forest-2);
+      color: #fff;
+      overflow: hidden;
+    }
+    .ai-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.14);
+    }
+    .ai-intro, .ai-node {
+      background: var(--forest-2);
+      padding: 30px;
+    }
+    .ai-intro p {
+      color: rgba(255,255,255,0.75);
+      font-size: 17px;
+      line-height: 1.75;
+    }
+    .ai-nodes {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.14);
+    }
+    .ai-node b { display: block; color: #fff; }
+    .ai-node span {
+      display: block;
+      margin-top: 7px;
+      color: rgba(255,255,255,0.68);
+      font-size: 13px;
+    }
+    .flow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+    .flow span {
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 999px;
+      padding: 8px 11px;
+      color: rgba(255,255,255,0.82);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .case-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 310px;
+      padding: 24px;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+    .case-card:nth-child(3n + 1) { background: #fff; }
+    .case-card:nth-child(3n + 2) { background: var(--sky); }
+    .case-card:nth-child(3n + 3) { background: var(--rose); }
+    .case-meta {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 950;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .case-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 16px 0;
+    }
+    .case-tags span {
+      padding: 5px 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.72);
+      color: #2f353d;
+      font-size: 11px;
+      font-weight: 900;
+    }
+    .case-result {
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid rgba(18,18,18,0.12);
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .case-result b {
+      color: var(--blue);
+      font-family: var(--display);
+      font-size: 30px;
+      line-height: 1;
+    }
+    .case-result span {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 950;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--line);
+      overflow: hidden;
+    }
+    .step {
+      min-height: 158px;
+      padding: 22px;
+      background: #fff;
+    }
+    .step b {
+      color: var(--coral);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+    }
+    .step span {
+      display: block;
+      margin-top: 10px;
+      font-weight: 950;
+      letter-spacing: -0.02em;
+    }
+    .step p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .experience {
+      border-left: 2px solid var(--line);
+      margin-left: 10px;
+      padding-left: 30px;
+    }
+    .exp-item {
+      position: relative;
+      padding: 0 0 34px;
+    }
+    .exp-item:before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: -39px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--coral);
+      box-shadow: 0 0 0 7px var(--rose);
+    }
+    .exp-item:last-child { padding-bottom: 0; }
+    .exp-item time {
+      display: block;
+      color: var(--forest);
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .exp-item p {
+      max-width: 850px;
+      margin: 8px 0 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .reviews-shell {
+      overflow: hidden;
+      border-radius: var(--radius);
+    }
+    .reviews-track {
+      display: flex;
+      gap: 16px;
+      width: max-content;
+      animation: reviewMarquee 44s linear infinite;
+    }
+    .reviews-shell:hover .reviews-track { animation-play-state: paused; }
+    @keyframes reviewMarquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .quote {
+      width: min(430px, calc(100vw - 48px));
+      min-height: 300px;
+      padding: 26px;
+      flex: 0 0 auto;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+    .stars {
+      color: var(--gold);
+      font-weight: 950;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+    }
+    .quote cite {
+      display: block;
+      margin-top: 18px;
+      color: #363b43;
+      font-style: normal;
+      font-weight: 950;
+    }
+    .quote small {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .tools-grid, .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .tool-group, .cert {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      padding: 20px;
+    }
+    .tool-group b, .cert b { display: block; margin-bottom: 12px; }
+    .tool-group span, .cert span {
+      display: inline-block;
+      margin: 0 6px 8px 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .faq-item { padding: 24px; }
+    .faq-item h3 { font-size: 19px; }
+
+    .contact {
+      padding: 78px 0;
+      background: var(--ink);
+      color: #fff;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.54fr);
+      gap: 34px;
+      align-items: start;
+    }
+    .contact h2 { color: #fff; }
+    .contact p {
+      max-width: 760px;
+      color: rgba(255,255,255,0.75);
+      font-size: 18px;
+      line-height: 1.7;
+    }
+    .contact-card {
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: var(--radius);
+      padding: 24px;
+      background: rgba(255,255,255,0.06);
+    }
+    .contact-card a, .contact-card span {
+      display: block;
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.14);
+      color: rgba(255,255,255,0.84);
+      font-weight: 850;
+      word-break: break-word;
+    }
+    .contact-card a:last-child, .contact-card span:last-child { border-bottom: 0; }
+    footer {
+      padding: 24px 0;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      background: var(--ink);
+      color: rgba(255,255,255,0.58);
+      font-size: 13px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 520ms ease, transform 520ms ease;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *:before, *:after {
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+
+    @media (max-width: 1040px) {
+      .nav-links { display: none; }
+      .hero-grid,
+      .media-grid,
+      .graph-grid,
+      .ai-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-card { max-width: 520px; }
+      .cards,
+      .case-grid,
+      .tools-grid,
+      .cert-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .process { grid-template-columns: repeat(2, 1fr); }
+      .section-head { display: block; }
+    }
+
+    @media (max-width: 700px) {
+      .wrap { width: min(100% - 28px, 1180px); }
+      .brand span:last-child { display: none; }
+      .hero { padding-top: 48px; }
+      .hero-actions .btn { width: 100%; }
+      .quick-proof,
+      .mini-grid,
+      .metric-row,
+      .cards,
+      .case-grid,
+      .process,
+      .ai-nodes,
+      .tools-grid,
+      .cert-grid,
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+      .proof-item { min-height: 92px; }
+      section { padding: 58px 0; }
+      .card, .case-card, .graph-panel, .quote, .faq-item, .ai-intro, .ai-node {
+        padding: 22px;
+      }
+      .ticker-track { animation-duration: 24s; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <nav class="wrap nav" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Kamatham Premaswini home">
+        <span class="brand-mark">KP</span>
+        <span>Kamatham Premaswini</span>
+      </a>
+      <div class="nav-links">
+        <a href="#proof">Proof</a>
+        <a href="#skills">Skills</a>
+        <a href="#work">Case Studies</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="btn small" href="mailto:kamathampremaswini1@gmail.com">Book Strategy Call</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Senior SEO & AI Search Strategist</div>
+          <h1>Organic growth systems for brands that need to be found, trusted, and cited.</h1>
+          <p class="hero-lede">Technical SEO, enterprise SEO, content strategy, GEO, AEO, entity SEO, local SEO, E-E-A-T, and analytics built into one accountable growth engine for high-value clients.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#intro-video">Watch Intro Video</a>
+            <a class="btn secondary" href="#work">See Case Studies</a>
+          </div>
+          <div class="hero-tags" aria-label="Core services">
+            <span class="tag">Technical SEO</span>
+            <span class="tag">Enterprise SEO</span>
+            <span class="tag">Content Strategy</span>
+            <span class="tag">GEO / AEO</span>
+            <span class="tag">Entity SEO</span>
+            <span class="tag">Local SEO</span>
+            <span class="tag">YMYL E-E-A-T</span>
+            <span class="tag">CRO</span>
+          </div>
+          <div class="quick-proof" aria-label="Headline results">
+            <div class="proof-item"><strong>6+</strong><span>Years SEO and content</span></div>
+            <div class="proof-item"><strong>50+</strong><span>SEO, GEO, AEO projects</span></div>
+            <div class="proof-item"><strong>200+</strong><span>Businesses supported</span></div>
+            <div class="proof-item"><strong>4.9</strong><span>Client rating</span></div>
+          </div>
+        </div>
+
+        <aside class="hero-card reveal" aria-label="Profile photo">
+          <img class="portrait" src="assets/premaswini-photo.jpg" alt="Kamatham Premaswini">
+          <div class="availability">
+            <div>
+              <b>India based. Remote worldwide.</b>
+              <span>Available for senior SEO, AI search, content strategy, and consulting engagements.</span>
+            </div>
+            <span class="status-dot" aria-label="Available"></span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="ticker" aria-label="Search platforms">
+      <div class="ticker-track">
+        <span>Google</span><span>AI Overviews</span><span>ChatGPT</span><span>Gemini</span><span>Perplexity</span><span>Claude</span><span>Bing</span><span>Copilot</span>
+        <span>Google</span><span>AI Overviews</span><span>ChatGPT</span><span>Gemini</span><span>Perplexity</span><span>Claude</span><span>Bing</span><span>Copilot</span>
+      </div>
+    </div>
+
+    <section id="intro-video">
+      <div class="wrap media-grid">
+        <div class="video-shell reveal">
+          <span class="video-label">Intro Video</span>
+          <video controls playsinline preload="metadata" poster="assets/premaswini-photo.jpg">
+            <source src="assets/premaswini-intro.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="media-copy reveal">
+          <div>
+            <div class="section-kicker">Built for high-ticket trust</div>
+            <h2>Strategy, implementation, and reporting in one senior search partner.</h2>
+            <p class="section-lede">I build search programs from audit to execution: technical recommendations, content architecture, AI visibility, local systems, dashboards, and cross-functional delivery with writers, developers, designers, PPC teams, founders, and operators.</p>
+          </div>
+          <div class="mini-grid">
+            <div class="mini-card"><b>Revenue accountable</b><span>Measured by qualified traffic, conversions, pipeline, revenue, CTR, ROAS, and visibility.</span></div>
+            <div class="mini-card"><b>AI search ready</b><span>GEO, AEO, AI Overviews, ChatGPT, Gemini, Claude, and Perplexity visibility.</span></div>
+            <div class="mini-card"><b>Enterprise capable</b><span>Multi-campus, multi-location, international, and multi-domain SEO systems.</span></div>
+            <div class="mini-card"><b>YMYL experienced</b><span>Healthcare, legal, home care, wellness, and other high-trust verticals.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-strip">
+      <div class="wrap trust-inner">
+        <div class="trust-title">Selected work across</div>
+        <span class="client-chip">VIT</span>
+        <span class="client-chip">Foton Energy Storage</span>
+        <span class="client-chip">INIYA Clinic</span>
+        <span class="client-chip">Kapil Dixit LLP</span>
+        <span class="client-chip">Unified Home Care</span>
+        <span class="client-chip">Lateral Connect</span>
+        <span class="client-chip">Flodesk</span>
+        <span class="client-chip">TPCS Tech</span>
+        <span class="client-chip">GNEXT UAE</span>
+        <span class="client-chip">Rank AI Digital</span>
+      </div>
+    </div>
+
+    <section id="proof">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Performance proof</div>
+            <h2>Business outcomes that make SEO easier to buy.</h2>
+          </div>
+          <p class="section-lede">The positioning is not "more traffic." It is compounding search visibility that supports revenue, conversion, authority, and AI citation readiness.</p>
+        </div>
+        <div class="graph-grid">
+          <div class="graph-panel reveal">
+            <div class="graph-top">
+              <div class="graph-title">Organic growth curve across a 6-quarter SEO program</div>
+              <div class="graph-note">Indexed view</div>
+            </div>
+            <svg viewBox="0 0 740 330" role="img" aria-labelledby="growthTitle growthDesc">
+              <title id="growthTitle">Organic growth line chart</title>
+              <desc id="growthDesc">A line chart shows indexed growth rising from 100 to 220 across six quarters.</desc>
+              <line class="grid-line" x1="62" y1="58" x2="700" y2="58"></line>
+              <line class="grid-line" x1="62" y1="126" x2="700" y2="126"></line>
+              <line class="grid-line" x1="62" y1="194" x2="700" y2="194"></line>
+              <line class="grid-line" x1="62" y1="262" x2="700" y2="262"></line>
+              <text class="axis-label" x="24" y="63">220</text>
+              <text class="axis-label" x="24" y="131">180</text>
+              <text class="axis-label" x="24" y="199">140</text>
+              <text class="axis-label" x="24" y="267">100</text>
+              <path class="growth-area" d="M62 262 L176 236 L290 206 L404 171 L518 114 L632 58 L632 282 L62 282 Z"></path>
+              <path class="growth-line" d="M62 262 C122 252, 128 244, 176 236 S250 214, 290 206 S360 184, 404 171 S480 128, 518 114 S590 70, 632 58"></path>
+              <circle class="dot" cx="62" cy="262" r="7"></circle>
+              <circle class="dot" cx="176" cy="236" r="7"></circle>
+              <circle class="dot" cx="290" cy="206" r="7"></circle>
+              <circle class="dot" cx="404" cy="171" r="7"></circle>
+              <circle class="dot" cx="518" cy="114" r="7"></circle>
+              <circle class="dot" cx="632" cy="58" r="7"></circle>
+              <text class="axis-label" x="54" y="314">Q1</text>
+              <text class="axis-label" x="168" y="314">Q2</text>
+              <text class="axis-label" x="282" y="314">Q3</text>
+              <text class="axis-label" x="396" y="314">Q4</text>
+              <text class="axis-label" x="510" y="314">Q5</text>
+              <text class="axis-label" x="624" y="314">Q6</text>
+            </svg>
+          </div>
+          <div class="graph-panel reveal">
+            <div class="graph-top">
+              <div class="graph-title">High-intent outcome mix</div>
+              <div class="graph-note">Client highlights</div>
+            </div>
+            <svg viewBox="0 0 460 330" role="img" aria-labelledby="barTitle barDesc">
+              <title id="barTitle">SEO outcome bar chart</title>
+              <desc id="barDesc">Bars show revenue growth 60 percent, conversion lift 52 percent, organic traffic growth 40 percent, and CTR lift 38 percent.</desc>
+              <line class="grid-line" x1="50" y1="58" x2="430" y2="58"></line>
+              <line class="grid-line" x1="50" y1="126" x2="430" y2="126"></line>
+              <line class="grid-line" x1="50" y1="194" x2="430" y2="194"></line>
+              <line class="grid-line" x1="50" y1="262" x2="430" y2="262"></line>
+              <rect class="bar" x="74" y="82" width="58" height="180" rx="6" fill="#123f36"></rect>
+              <rect class="bar" x="166" y="106" width="58" height="156" rx="6" fill="#1f4ed8"></rect>
+              <rect class="bar" x="258" y="142" width="58" height="120" rx="6" fill="#d65d45"></rect>
+              <rect class="bar" x="350" y="148" width="58" height="114" rx="6" fill="#b48528"></rect>
+              <text class="axis-label" x="79" y="74">60%</text>
+              <text class="axis-label" x="171" y="98">52%</text>
+              <text class="axis-label" x="263" y="134">40%</text>
+              <text class="axis-label" x="355" y="140">38%</text>
+              <text class="axis-label" x="62" y="302">Revenue</text>
+              <text class="axis-label" x="154" y="302">Conversion</text>
+              <text class="axis-label" x="256" y="302">Traffic</text>
+              <text class="axis-label" x="354" y="302">CTR</text>
+            </svg>
+          </div>
+        </div>
+        <div class="metric-row reveal">
+          <div class="metric-cell"><b>60%</b><span>Revenue growth</span></div>
+          <div class="metric-cell"><b>3.2x</b><span>ROAS improvement</span></div>
+          <div class="metric-cell"><b>52%</b><span>Conversion lift</span></div>
+          <div class="metric-cell"><b>12+</b><span>Countries served</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Full-stack search coverage</div>
+            <h2>Every SEO, content, AI search, and reporting layer covered.</h2>
+          </div>
+          <p class="section-lede">This skill matrix is designed for enterprise buyers, agencies, funded startups, healthcare brands, legal teams, SaaS companies, and local service operators that need senior strategy plus implementation depth.</p>
+        </div>
+        <div class="cards">
+          <article class="card reveal">
+            <div class="card-index">01 / Technical SEO</div>
+            <h3>Architecture, crawl, indexation, and performance</h3>
+            <p>Crawl audits, Core Web Vitals, structured data, schema, site architecture, canonicalization, XML sitemaps, robots.txt, hreflang, JavaScript SEO, migrations, internal linking, and SEO roadmaps.</p>
+            <div class="skill-list"><span>Core Web Vitals</span><span>Schema</span><span>Hreflang</span><span>JS SEO</span><span>Migration</span></div>
+          </article>
+          <article class="card reveal">
+            <div class="card-index">02 / Content Strategy</div>
+            <h3>Editorial systems that build topical authority</h3>
+            <p>SEO content strategy, content operations, gap analysis, optimization, topic clusters, pillar pages, information architecture, editorial calendars, briefs, audits, refreshes, and performance analysis.</p>
+            <div class="skill-list"><span>Topic Clusters</span><span>Pillar Pages</span><span>Briefs</span><span>Governance</span></div>
+          </article>
+          <article class="card reveal">
+            <div class="card-index">03 / Content Creation</div>
+            <h3>Conversion copy and search-first publishing</h3>
+            <p>Website copy, landing pages, service pages, blog writing, long-form articles, newsletter writing, LinkedIn content, Google Business Profile posts, SEO copywriting, and editorial guidelines.</p>
+            <div class="skill-list"><span>Landing Pages</span><span>Blogs</span><span>LinkedIn</span><span>GBP Posts</span></div>
+          </article>
+          <article class="card reveal">
+            <div class="card-index">04 / AI Search</div>
+            <h3>GEO, AEO, entity SEO, and LLM visibility</h3>
+            <p>Generative Engine Optimization, Answer Engine Optimization, Google AI Overviews, ChatGPT, Gemini, Claude, Perplexity citations, knowledge graph, semantic SEO, llms.txt, and entity identity.</p>
+            <div class="skill-list"><span>GEO</span><span>AEO</span><span>AI Overviews</span><span>Entity SEO</span><span>LLM Visibility</span></div>
+          </article>
+          <article class="card reveal">
+            <div class="card-index">05 / Growth SEO</div>
+            <h3>Local, international, enterprise, and CRO</h3>
+            <p>Keyword research, gap analysis, topical authority, multi-location SEO, citation management, Google Business Profile, enterprise SEO, YMYL E-E-A-T, programmatic SEO, CRO, and link strategy.</p>
+            <div class="skill-list"><span>Local SEO</span><span>Enterprise</span><span>International</span><span>CRO</span><span>E-E-A-T</span></div>
+          </article>
+          <article class="card reveal">
+            <div class="card-index">06 / Analytics and Delivery</div>
+            <h3>Reporting that executives can act on</h3>
+            <p>GA4, Google Search Console, Looker Studio, GTM, Ahrefs, SEMrush, Screaming Frog, Moz, BrightLocal, Surfer, KPI dashboards, forecasting, benchmarking, training, and stakeholder management.</p>
+            <div class="skill-list"><span>GA4</span><span>GSC</span><span>Looker</span><span>Forecasting</span><span>Team Leadership</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap ai-lab reveal">
+        <div class="ai-grid">
+          <div class="ai-intro">
+            <div class="section-kicker">AI Search Lab</div>
+            <h2>Built for Google and the generative answer layer.</h2>
+            <p>AI Overviews, ChatGPT, Gemini, Claude, and Perplexity need clear entities, source-worthy content, structured facts, authority signals, and consistent brand mentions. This portfolio positions that as a service system, not a buzzword.</p>
+            <div class="flow">
+              <span>Website</span><span>Schema</span><span>Entities</span><span>Authority</span><span>LLM Crawl</span><span>Cited Answer</span>
+            </div>
+          </div>
+          <div class="ai-nodes">
+            <div class="ai-node"><b>GEO</b><span>Structure content so generative engines can extract and cite the brand.</span></div>
+            <div class="ai-node"><b>AEO</b><span>Win direct answers, snippets, and zero-click visibility with concise answer architecture.</span></div>
+            <div class="ai-node"><b>Entity SEO</b><span>Clarify people, brands, services, authors, locations, and expertise signals.</span></div>
+            <div class="ai-node"><b>Knowledge Graph</b><span>Use schema and consistent evidence to connect facts across the web.</span></div>
+            <div class="ai-node"><b>AI Overviews</b><span>Optimize pages for summary-friendly structure, original value, and trust depth.</span></div>
+            <div class="ai-node"><b>LLM Citations</b><span>Prepare source pages for ChatGPT, Gemini, Claude, and Perplexity discovery.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Selected case studies</div>
+            <h2>Proof across education, healthcare, legal, SaaS, energy, cybersecurity, and local services.</h2>
+          </div>
+          <p class="section-lede">Each case is written for a client or hiring manager scanning for confidence: market, challenge, strategic role, and a visible business or authority result.</p>
+        </div>
+        <div class="case-grid">
+          <article class="case-card reveal">
+            <div class="case-meta">Education / Enterprise / India</div>
+            <h3>Vellore Institute of Technology</h3>
+            <p>Owned enterprise SEO and content governance for a multi-campus university, building topical authority maps across academic programs and admissions intent.</p>
+            <div class="case-tags"><span>Enterprise SEO</span><span>Multi-Campus Local</span><span>AEO + GEO</span><span>Content Governance</span></div>
+            <div class="case-result"><b>4</b><span>Campuses unified</span></div>
+          </article>
+          <article class="case-card reveal">
+            <div class="case-meta">B2B / Renewable Energy / Australia</div>
+            <h3>Foton Energy Storage</h3>
+            <p>Directed buyer-journey keyword strategy and technical SEO cleanup for high-intent energy storage buyers.</p>
+            <div class="case-tags"><span>Technical SEO</span><span>Content Strategy</span><span>Topical Authority</span><span>CRO</span></div>
+            <div class="case-result"><b>60%</b><span>Revenue growth</span></div>
+          </article>
+          <article class="case-card reveal">
+            <div class="case-meta">Healthcare / London, UK</div>
+            <h3>INIYA Skin and Laser Clinic</h3>
+            <p>Designed treatment-level service pages and trust-signal content to improve local visibility in a competitive London market.</p>
+            <div class="case-tags"><span>Local SEO</span><span>E-E-A-T</span><span>GBP</span><span>Treatment Pages</span></div>
+            <div class="case-result"><b>38%</b><span>CTR improvement</span></div>
+          </article>
+          <article class="case-card reveal">
+            <div class="case-meta">Legal / YMYL / Bangalore</div>
+            <h3>Kapil Dixit LLP</h3>
+            <p>Built E-E-A-T-driven YMYL content and practice-area pillar pages for complex legal search intent and local trust.</p>
+            <div class="case-tags"><span>YMYL</span><span>Pillar Pages</span><span>Local SEO</span><span>Trust Signals</span></div>
+            <div class="case-result"><b>YMYL</b><span>Trust system</span></div>
+          </article>
+          <article class="case-card reveal">
+            <div class="case-meta">Cybersecurity / United Kingdom</div>
+            <h3>Lateral Connect</h3>
+            <p>Managed SEO content strategy, founder personal branding, and thought-leadership content for a high-trust cybersecurity brand.</p>
+            <div class="case-tags"><span>Founder Branding</span><span>AI Visibility</span><span>E-E-A-T</span><span>Content Calendar</span></div>
+            <div class="case-result"><b>AI</b><span>Authority lift</span></div>
+          </article>
+          <article class="case-card reveal">
+            <div class="case-meta">Healthcare / Kerala, India</div>
+            <h3>Medlounges Wellness</h3>
+            <p>Rebuilt a thin-content healthcare site into a full content architecture aligned with healthcare SEO and AI search readiness.</p>
+            <div class="case-tags"><span>Healthcare SEO</span><span>Content Architecture</span><span>Local SEO</span><span>AI Search</span></div>
+            <div class="case-result"><b>Full</b><span>Content rebuild</span></div>
+          </article>
+          <article class="case-card reveal">
+            <div class="case-meta">Local / Wellness / England</div>
+            <h3>Athira Spa</h3>
+            <p>Built a local SEO playbook with Google Business Profile optimization, reviews, service pages, and local pack targeting.</p>
+            <div class="case-tags"><span>GBP</span><span>Reviews</span><span>Service Pages</span><span>Local Pack</span></div>
+            <div class="case-result"><b>Top 3</b><span>Local visibility</span></div>
+          </article>
+          <article class="case-card reveal">
+            <div class="case-meta">Healthcare / YMYL / UK</div>
+            <h3>Unified Home Care</h3>
+            <p>Earned trust signals required for senior care and home care search while aligning content with local commercial intent.</p>
+            <div class="case-tags"><span>YMYL</span><span>Local SEO</span><span>E-E-A-T</span><span>Service Pages</span></div>
+            <div class="case-result"><b>Trust</b><span>Signals built</span></div>
+          </article>
+          <article class="case-card reveal">
+            <div class="case-meta">B2B SEO / United Kingdom</div>
+            <h3>AIKO Global</h3>
+            <p>Executed SEO, PPC, and content marketing strategies to increase qualified traffic and support business growth.</p>
+            <div class="case-tags"><span>B2B SEO</span><span>PPC</span><span>On-page SEO</span><span>Campaigns</span></div>
+            <div class="case-result"><b>B2B</b><span>Qualified traffic</span></div>
+          </article>
+          <article class="case-card reveal">
+            <div class="case-meta">SaaS / Global</div>
+            <h3>Flodesk</h3>
+            <p>Built cluster-first content architecture for email marketing keywords and topical authority expansion.</p>
+            <div class="case-tags"><span>SaaS SEO</span><span>Content Clusters</span><span>Topical Authority</span></div>
+            <div class="case-result"><b>Cluster</b><span>Authority built</span></div>
+          </article>
+          <article class="case-card reveal">
+            <div class="case-meta">Local / Agency SEO / UAE</div>
+            <h3>GNEXT</h3>
+            <p>Operationalized SEO across UAE service-area businesses with English and Arabic market coverage.</p>
+            <div class="case-tags"><span>UAE Local</span><span>Multi-Language</span><span>Agency Ops</span><span>GBP</span></div>
+            <div class="case-result"><b>UAE</b><span>Local wins</span></div>
+          </article>
+          <article class="case-card reveal">
+            <div class="case-meta">International SEO / Fashion ERP</div>
+            <h3>TPCS Tech</h3>
+            <p>Led international technical SEO recommendations including hreflang, multi-region indexation, and scalable architecture.</p>
+            <div class="case-tags"><span>Hreflang</span><span>International SEO</span><span>Technical SEO</span></div>
+            <div class="case-result"><b>Multi</b><span>Region indexation</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Repeatable process</div>
+            <h2>A 10-step search program clients can understand and trust.</h2>
+          </div>
+        </div>
+        <div class="process reveal">
+          <div class="step"><b>01</b><span>Discovery</span><p>Goals, audience, market, competitors, and business constraints.</p></div>
+          <div class="step"><b>02</b><span>SERP Analysis</span><p>Intent mapping across traditional and AI-powered search surfaces.</p></div>
+          <div class="step"><b>03</b><span>Entity Mapping</span><p>Knowledge graph, brand facts, authors, locations, and expertise signals.</p></div>
+          <div class="step"><b>04</b><span>Technical Audit</span><p>Crawl, render, index, performance, schema, and architecture issues.</p></div>
+          <div class="step"><b>05</b><span>Content Strategy</span><p>Topic clusters, editorial calendar, content briefs, and governance.</p></div>
+          <div class="step"><b>06</b><span>On-Page SEO</span><p>Metadata, content optimization, internal linking, and structured data.</p></div>
+          <div class="step"><b>07</b><span>Authority Build</span><p>Digital PR, citations, link earning, and brand mention systems.</p></div>
+          <div class="step"><b>08</b><span>E-E-A-T</span><p>Author entities, proof, trust pages, review signals, and YMYL safeguards.</p></div>
+          <div class="step"><b>09</b><span>AI Search</span><p>GEO, AEO, AI Overviews, ChatGPT, Gemini, Claude, and Perplexity readiness.</p></div>
+          <div class="step"><b>10</b><span>Reporting</span><p>Looker dashboards, insight reviews, forecasts, and prioritized roadmap.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-label="SEO services">
+      <div class="ticker-track">
+        <span>Technical SEO</span><span>GEO</span><span>AEO</span><span>Content Strategy</span><span>Entity SEO</span><span>E-E-A-T</span><span>Local SEO</span><span>International SEO</span><span>Enterprise SEO</span><span>Core Web Vitals</span><span>Technical SEO</span><span>GEO</span><span>AEO</span><span>Content Strategy</span><span>Entity SEO</span><span>E-E-A-T</span><span>Local SEO</span><span>International SEO</span><span>Enterprise SEO</span><span>Core Web Vitals</span>
+      </div>
+    </div>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Professional experience</div>
+            <h2>Leadership across consulting, agency portfolios, cybersecurity, B2B, and content-heavy brands.</h2>
+          </div>
+        </div>
+        <div class="experience">
+          <article class="exp-item reveal">
+            <time>2020 - Present / Independent Consultant</time>
+            <h3>Senior SEO and AI Search Consultant</h3>
+            <p>Deliver SEO, technical SEO, content strategy, GEO, AEO, and local SEO consulting for enterprise organizations, agencies, startups, and SMBs across healthcare, SaaS, legal, education, cybersecurity, renewable energy, wellness, and local services in the USA, UK, UAE, Australia, and India.</p>
+          </article>
+          <article class="exp-item reveal">
+            <time>2025 / 6-month contract</time>
+            <h3>Content Head - Ask Ayurveda</h3>
+            <p>Directed content strategy and production for website content, blogs, and educational articles across Ayurveda, wellness, and holistic health topics. Built topic clusters and editorial standards for E-E-A-T in a regulated health content space.</p>
+          </article>
+          <article class="exp-item reveal">
+            <time>Jun 2024 - Apr 2025 / Cybersecurity</time>
+            <h3>Brand Specialist, SEO and Content Strategy - Lateral Connect</h3>
+            <p>Managed SEO content strategy, founder personal branding, thought leadership, and content calendars to strengthen online identity and search trust in a high-trust cybersecurity vertical.</p>
+          </article>
+          <article class="exp-item reveal">
+            <time>Dec 2023 - Dec 2024 / B2B SEO</time>
+            <h3>SEO and Content Specialist / SEO and PPC Marketer - AIKO Global</h3>
+            <p>Executed SEO, PPC, and digital marketing strategies to increase qualified traffic and support business growth through Google Ads, keyword targeting, on-page SEO, technical recommendations, blogs, and landing pages.</p>
+          </article>
+          <article class="exp-item reveal">
+            <time>Sep 2023 - Feb 2024 / United States</time>
+            <h3>Digital Marketing Specialist - Ampexcel Technologies</h3>
+            <p>Developed SEO strategies, keyword research, on-page optimization, content planning, AdSense optimization, and email marketing campaigns for lead generation and retention.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Testimonials</div>
+            <h2>Trusted by founders, marketers, agencies, and operators.</h2>
+          </div>
+          <p class="section-lede">The row moves on its own and pauses on hover, giving the page a premium proof layer without hiding the words that matter.</p>
+        </div>
+        <div class="reviews-shell reveal" aria-label="Client testimonials">
+          <div class="reviews-track">
+            <blockquote class="quote">
+              <div class="stars">???????????????</div>
+              <p>"From the start, she provided a clear roadmap and executed our project with impressive speed. Everything she committed to was delivered on time and to a high standard."</p>
+              <cite>Blesson Kuriakose</cite>
+              <small>Co-Founder, Capstone Mark</small>
+            </blockquote>
+            <blockquote class="quote">
+              <div class="stars">???????????????</div>
+              <p>"The quality of work is great and her communication was incredible. I got timely updates, multiple check-ins and fast changes whenever I requested."</p>
+              <cite>Mohammed Saquib Sherief K</cite>
+              <small>Digital Marketer</small>
+            </blockquote>
+            <blockquote class="quote">
+              <div class="stars">???????????????</div>
+              <p>"Report done in a timely matter. Great clear insight in the improvements that need to be made. Awesome work."</p>
+              <cite>Antonio Hernandez</cite>
+              <small>Senior Client Success Manager</small>
+            </blockquote>
+            <blockquote class="quote">
+              <div class="stars">???????????????</div>
+              <p>"She brought solid technical skills to our team and was always reliable with deadlines. She is a natural problem solver."</p>
+              <cite>Alwin John Augustin</cite>
+              <small>Web Design and SEO Expert</small>
+            </blockquote>
+            <blockquote class="quote">
+              <div class="stars">???????????????</div>
+              <p>"From improving our search rankings to increasing organic traffic, your efforts have truly helped us reach a wider audience."</p>
+              <cite>Kapil Dixit</cite>
+              <small>Founder, Kapil Dixit LLP</small>
+            </blockquote>
+            <blockquote class="quote">
+              <div class="stars">???????????????</div>
+              <p>"From the start, she provided a clear roadmap and executed our project with impressive speed. Everything she committed to was delivered on time and to a high standard."</p>
+              <cite>Blesson Kuriakose</cite>
+              <small>Co-Founder, Capstone Mark</small>
+            </blockquote>
+            <blockquote class="quote">
+              <div class="stars">???????????????</div>
+              <p>"The quality of work is great and her communication was incredible. I got timely updates, multiple check-ins and fast changes whenever I requested."</p>
+              <cite>Mohammed Saquib Sherief K</cite>
+              <small>Digital Marketer</small>
+            </blockquote>
+            <blockquote class="quote">
+              <div class="stars">???????????????</div>
+              <p>"Report done in a timely matter. Great clear insight in the improvements that need to be made. Awesome work."</p>
+              <cite>Antonio Hernandez</cite>
+              <small>Senior Client Success Manager</small>
+            </blockquote>
+            <blockquote class="quote">
+              <div class="stars">???????????????</div>
+              <p>"She brought solid technical skills to our team and was always reliable with deadlines. She is a natural problem solver."</p>
+              <cite>Alwin John Augustin</cite>
+              <small>Web Design and SEO Expert</small>
+            </blockquote>
+            <blockquote class="quote">
+              <div class="stars">???????????????</div>
+              <p>"From improving our search rankings to increasing organic traffic, your efforts have truly helped us reach a wider audience."</p>
+              <cite>Kapil Dixit</cite>
+              <small>Founder, Kapil Dixit LLP</small>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Tools and platforms</div>
+            <h2>The stack high-performing search programs need.</h2>
+          </div>
+        </div>
+        <div class="tools-grid reveal">
+          <div class="tool-group"><b>Analytics</b><span>GA4</span><span>Search Console</span><span>Looker Studio</span><span>Google Tag Manager</span><span>Microsoft Clarity</span><span>Hotjar</span></div>
+          <div class="tool-group"><b>SEO Suites</b><span>Ahrefs</span><span>SEMrush</span><span>Moz</span><span>Screaming Frog</span><span>Sitebulb</span><span>BrightLocal</span><span>Local Falcon</span></div>
+          <div class="tool-group"><b>Content and CMS</b><span>Surfer SEO</span><span>Frase</span><span>Clearscope</span><span>MarketMuse</span><span>WordPress</span><span>Shopify</span><span>HubSpot CMS</span><span>RankMath</span><span>Yoast</span></div>
+          <div class="tool-group"><b>AI and Growth</b><span>ChatGPT</span><span>Claude</span><span>Gemini</span><span>Perplexity</span><span>NotebookLM</span><span>Cursor</span><span>OpenAI API</span><span>Google Ads</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Certifications</div>
+            <h2>Training across SEO, content, analytics, local SEO, and AI.</h2>
+          </div>
+        </div>
+        <div class="cert-grid reveal">
+          <div class="cert"><b>HubSpot Academy</b><span>Certified Content Marketing Specialist</span><span>SEO Certified</span></div>
+          <div class="cert"><b>Google</b><span>Google Analytics Individual Qualification</span><span>Digital Marketing and Garage</span></div>
+          <div class="cert"><b>SEO Platforms</b><span>SEMrush Advanced SEO Toolkit</span><span>Ahrefs Blogging and SEO</span><span>Yoast Technical SEO</span></div>
+          <div class="cert"><b>Local and AI</b><span>BrightLocal Local Link Building</span><span>BrightLocal Local SEO Content</span><span>Claude 101</span><span>Great Learning SEM</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">FAQ</div>
+            <h2>Direct answers for high-intent buyers.</h2>
+          </div>
+        </div>
+        <div class="faq-grid">
+          <article class="faq-item reveal">
+            <h3>What services are covered?</h3>
+            <p>Technical SEO, enterprise SEO, content strategy, content creation, local SEO, international SEO, E-E-A-T, GEO, AEO, entity SEO, AI search optimization, analytics, and reporting.</p>
+          </article>
+          <article class="faq-item reveal">
+            <h3>Do you work with healthcare and legal clients?</h3>
+            <p>Yes. Experience includes healthcare, wellness, legal, home care, and other YMYL categories where trust, author signals, review proof, and content quality matter.</p>
+          </article>
+          <article class="faq-item reveal">
+            <h3>What does a monthly engagement include?</h3>
+            <p>Roadmap, technical priorities, keyword strategy, content briefs, content optimization, local or AI search tasks, reporting, implementation guidance, and stakeholder updates.</p>
+          </article>
+          <article class="faq-item reveal">
+            <h3>How is success measured?</h3>
+            <p>Qualified traffic, indexed pages, ranking movement, conversions, CTR, revenue influence, local visibility, AI citation readiness, content velocity, and executive-level reporting.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap contact-grid">
+        <div class="reveal">
+          <div class="section-kicker">Contact</div>
+          <h2>Ready to build search visibility that compounds?</h2>
+          <p>Open to senior SEO, AI search, content strategy, technical SEO, and consulting opportunities for high-ticket clients, agencies, startups, and international teams.</p>
+          <div class="hero-actions">
+            <a class="btn light" href="mailto:kamathampremaswini1@gmail.com">Start a Conversation</a>
+            <a class="btn secondary" style="color:#fff;border-color:rgba(255,255,255,0.34)" href="https://linkedin.com/in/k-premaswini" target="_blank" rel="noreferrer">View LinkedIn</a>
+          </div>
+        </div>
+        <address class="contact-card reveal">
+          <a href="mailto:kamathampremaswini1@gmail.com">kamathampremaswini1@gmail.com</a>
+          <a href="tel:+916301976098">+91 6301 976 098</a>
+          <a href="https://linkedin.com/in/k-premaswini" target="_blank" rel="noreferrer">linkedin.com/in/k-premaswini</a>
+          <span>Tanuku, India / Remote Worldwide</span>
+        </address>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">&copy; 2026 Kamatham Premaswini. Senior SEO and AI Search Strategist.</div>
+  </footer>
+
+  <script>
+    const revealItems = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+    revealItems.forEach((item) => observer.observe(item));
+
+    const counters = document.querySelectorAll(".proof-item strong, .metric-cell b");
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const raw = el.textContent.trim();
+        const match = raw.match(/^([0-9.]+)(.*)$/);
+        if (!match) {
+          countObserver.unobserve(el);
+          return;
+        }
+        const target = parseFloat(match[1]);
+        const suffix = match[2];
+        let frame = 0;
+        const total = 34;
+        function tick() {
+          frame += 1;
+          const value = target * (1 - Math.pow(1 - frame / total, 3));
+          const shown = target % 1 === 0 ? Math.round(value) : value.toFixed(1);
+          el.textContent = (frame >= total ? match[1] : shown) + suffix;
+          if (frame < total) requestAnimationFrame(tick);
+        }
+        tick();
+        countObserver.unobserve(el);
+      });
+    }, { threshold: 0.55 });
+    counters.forEach((counter) => countObserver.observe(counter));
+  </script>
+</body>
+</html>
+
