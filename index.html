@@ -1673,6 +1673,81 @@
     @media (max-width: 1040px), (prefers-reduced-motion: reduce) {
       .hrail-bar, .hrail-hint { display: none; }
     }
+    /* hrail: arrow nav buttons */
+    .hrail-arrows {
+      position: absolute;
+      right: max(calc((100vw - 1180px) / 2), 20px);
+      bottom: 36px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 3;
+    }
+    .hrail-arrow {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(25,25,25,0.18);
+      background: rgba(253,252,245,0.88);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink);
+      transition: background 0.18s ease, border-color 0.18s ease, transform 0.14s ease, opacity 0.18s;
+      flex-shrink: 0;
+    }
+    .hrail-arrow:hover:not(:disabled) {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: #fff;
+      transform: scale(1.1);
+    }
+    .hrail-arrow:disabled { opacity: 0.28; cursor: default; }
+    .hrail-arrow svg { display: block; width: 15px; height: 15px; pointer-events: none; }
+    .hrail { cursor: grab; user-select: none; }
+    .hrail.is-dragging { cursor: grabbing; }
+    @media (max-width: 1040px) {
+      #work .case-grid {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        grid-template-columns: none !important;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 14px;
+        padding-inline: 20px;
+        padding-bottom: 20px;
+        cursor: grab;
+        margin-inline: -20px;
+        width: calc(100% + 40px);
+        scrollbar-width: none;
+      }
+      #work .case-grid::-webkit-scrollbar { display: none; }
+      #work .case-grid:active { cursor: grabbing; }
+      #work .case-grid .case-card {
+        flex: 0 0 min(320px, 80vw) !important;
+        width: min(320px, 80vw) !important;
+        min-height: 280px !important;
+        scroll-snap-align: start;
+      }
+      #work .swipe-hint {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-top: 16px;
+        padding-inline: 4px;
+      }
+      #work .swipe-hint svg { width: 14px; height: 14px; flex-shrink: 0; }
+    }
+    @media (min-width: 1041px) { #work .swipe-hint { display: none; } }
 
     .skill-list span { background: var(--mint); color: var(--forest); }
     .status-dot { box-shadow: 0 0 0 5px rgba(25, 179, 106, 0.16); }
@@ -2987,9 +3062,10 @@
       }
 
       /* ---------------------------------------------------------
-         10. Pinned horizontal case-study rail (desktop only)
+         10. Horizontal case-study rail — scroll-driven + drag + arrows
       --------------------------------------------------------- */
       var rail4 = null;
+
       function buildHRail() {
         var grid = document.querySelector("#work .case-grid");
         if (!grid || reduced || window.innerWidth <= 1040 || grid.closest(".hrail-sticky")) return;
@@ -3003,12 +3079,23 @@
         bar.innerHTML = "<i></i>";
         var hint = document.createElement("div");
         hint.className = "hrail-hint";
-        hint.textContent = "Scroll to explore →";
+        hint.textContent = "Scroll or drag to explore";
+
+        var arrowWrap = document.createElement("div");
+        arrowWrap.className = "hrail-arrows";
+        var prevBtn = document.createElement("button");
+        prevBtn.className = "hrail-arrow";
+        prevBtn.setAttribute("aria-label", "Previous case study");
+        prevBtn.innerHTML = '<svg viewBox="0 0 15 15" fill="none" aria-hidden="true"><path d="M9.5 11.5L5.5 7.5l4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+        var nextBtn = document.createElement("button");
+        nextBtn.className = "hrail-arrow";
+        nextBtn.setAttribute("aria-label", "Next case study");
+        nextBtn.innerHTML = '<svg viewBox="0 0 15 15" fill="none" aria-hidden="true"><path d="M5.5 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+        arrowWrap.appendChild(prevBtn);
+        arrowWrap.appendChild(nextBtn);
 
         grid.parentNode.insertBefore(outer, grid);
         outer.appendChild(sticky);
-
-        // keep the section heading pinned with the rail so context never scrolls away
         var head = document.querySelector("#work .section-head");
         if (head) {
           var holder = document.createElement("div");
@@ -3016,28 +3103,92 @@
           holder.appendChild(head);
           sticky.appendChild(holder);
         }
-
         sticky.appendChild(grid);
         sticky.appendChild(hint);
         sticky.appendChild(bar);
+        sticky.appendChild(arrowWrap);
         grid.classList.add("hrail");
 
-        rail4 = { outer: outer, sticky: sticky, grid: grid, fill: bar.querySelector("i"), dist: 0 };
+        var CARD_STEP = 378;
+        var isDragging = false;
+        var dragStartX = 0;
+        var dragStartOffset = 0;
+        var currentOffset = 0;
+
+        rail4 = { outer: outer, sticky: sticky, grid: grid, fill: bar.querySelector("i"), dist: 0, dragging: function() { return isDragging; } };
         sizeHRail();
+
+        function getHH() { return parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--header-h") || 74); }
+        function scrollToOffset(off) {
+          if (!rail4.dist) return;
+          var p = Math.max(0, Math.min(1, off / rail4.dist));
+          window.scrollTo({ top: rail4.outer.offsetTop - getHH() + p * rail4.dist, behavior: "smooth" });
+        }
+        function syncArrows(off) {
+          prevBtn.disabled = off <= 0;
+          nextBtn.disabled = off >= rail4.dist - 4;
+        }
+        prevBtn.addEventListener("click", function() {
+          scrollToOffset(Math.max(0, (Math.round(currentOffset / CARD_STEP) - 1) * CARD_STEP));
+        });
+        nextBtn.addEventListener("click", function() {
+          scrollToOffset(Math.min(rail4.dist, (Math.round(currentOffset / CARD_STEP) + 1) * CARD_STEP));
+        });
+
+        grid.addEventListener("pointerdown", function(e) {
+          if (e.button !== 0) return;
+          isDragging = true;
+          dragStartX = e.clientX;
+          dragStartOffset = currentOffset;
+          grid.classList.add("is-dragging");
+          try { grid.setPointerCapture(e.pointerId); } catch(x) {}
+          e.preventDefault();
+        });
+        grid.addEventListener("pointermove", function(e) {
+          if (!isDragging) return;
+          var off = Math.max(0, Math.min(rail4.dist, dragStartOffset + dragStartX - e.clientX));
+          currentOffset = off;
+          grid.style.transform = "translate3d(" + (-off).toFixed(1) + "px,0,0)";
+          rail4.fill.style.width = (off / rail4.dist * 100).toFixed(1) + "%";
+          syncArrows(off);
+        });
+        function endDrag(e) {
+          if (!isDragging) return;
+          isDragging = false;
+          grid.classList.remove("is-dragging");
+          try { grid.releasePointerCapture(e.pointerId); } catch(x) {}
+          var snapped = Math.max(0, Math.min(rail4.dist, Math.round(currentOffset / CARD_STEP) * CARD_STEP));
+          currentOffset = snapped;
+          grid.style.transform = "translate3d(" + (-snapped).toFixed(1) + "px,0,0)";
+          rail4.fill.style.width = (snapped / rail4.dist * 100).toFixed(1) + "%";
+          syncArrows(snapped);
+          scrollToOffset(snapped);
+        }
+        grid.addEventListener("pointerup", endDrag);
+        grid.addEventListener("pointercancel", function() { isDragging = false; grid.classList.remove("is-dragging"); });
+        syncArrows(0);
+
+        /* mobile swipe hint */
+        (function() {
+          var mGrid = document.querySelector("#work .case-grid");
+          if (!mGrid) return;
+          var sh = document.createElement("p");
+          sh.className = "swipe-hint";
+          sh.innerHTML = '<svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Swipe to explore';
+          mGrid.parentNode.insertBefore(sh, mGrid.nextSibling);
+        })();
       }
 
       function sizeHRail() {
         if (!rail4) return;
-        var dist = Math.max(0, rail4.grid.scrollWidth - window.innerWidth);
-        rail4.dist = dist;
-        rail4.outer.style.height = (dist + window.innerHeight) + "px";
+        rail4.dist = Math.max(0, rail4.grid.scrollWidth - window.innerWidth);
+        rail4.outer.style.height = (rail4.dist + window.innerHeight) + "px";
       }
 
       function moveHRail() {
-        if (!rail4 || !rail4.dist) return;
-        var top = rail4.outer.offsetTop - parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--header-h") || 74);
-        var p = (window.scrollY - top) / rail4.dist;
-        p = Math.max(0, Math.min(1, p));
+        if (!rail4 || !rail4.dist || rail4.dragging()) return;
+        var hh = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--header-h") || 74);
+        var p = Math.max(0, Math.min(1, (window.scrollY - rail4.outer.offsetTop + hh) / rail4.dist));
         rail4.grid.style.transform = "translate3d(" + (-rail4.dist * p).toFixed(1) + "px,0,0)";
         rail4.fill.style.width = (p * 100).toFixed(1) + "%";
       }
@@ -3048,7 +3199,7 @@
       window.addEventListener("load", function () { sizeHRail(); moveHRail(); });
       moveHRail();
 
-      /* ---------------------------------------------------------
+            /* ---------------------------------------------------------
          11. Animated counters
       --------------------------------------------------------- */
       var counters = document.querySelectorAll(".proof-item strong, .metric-cell b");
