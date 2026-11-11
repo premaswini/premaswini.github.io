@@ -2120,6 +2120,23 @@
       .fq-a { padding: 0 16px 18px 16px; }
     }
     @media (prefers-reduced-motion: reduce) { .fq, .fq-i, .fq::details-content { transition: none; } }
+    /* hrail: hint, progress bar and arrows sit in normal flow below the cards (no overlap) */
+    .hrail-sticky { justify-content: flex-start; padding-top: 24px; gap: 20px; }
+    .hrail-bar, .hrail-hint, .hrail-arrows { position: static; }
+    .hrail-bar { margin: 4px 0 0; }
+    .hrail-controls { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .hrail-sticky .section-head { margin-bottom: 0; gap: 48px; }
+    .hrail-sticky .section-head > div { flex: 1.5 1 0; }
+    .hrail-sticky .section-head .section-lede { flex: 1 1 0; }
+    .hrail-sticky .section-head h2 { font-size: clamp(26px, 2.4vw, 34px); max-width: none; }
+    @media (max-height: 820px) {
+      .hrail-sticky { padding-top: 12px; gap: 14px; padding-bottom: 16px; }
+      .hrail-sticky .section-head .section-lede { display: none; }
+      .hrail-sticky .section-head h2 { font-size: 26px; max-width: none; }
+      .hrail .case-card p { -webkit-line-clamp: 3; }
+    }
+    .hrail .case-card { min-height: 0; }
+    .hrail .case-card p { display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
 html, body { overflow-x: clip; }
 </style>
 </head>
@@ -2478,7 +2495,7 @@ html, body { overflow-x: clip; }
         <div class="section-head reveal">
           <div>
             <div class="section-kicker">Selected case studies</div>
-            <h2>Proof across education, healthcare, legal, SaaS, energy, cybersecurity, and local services.</h2>
+            <h2>Proof across education, healthcare, legal, SaaS, energy, cybersecurity, ecommerce, and local services.</h2>
           </div>
           <p class="section-lede">Each case is written for a client or hiring manager scanning for confidence: market, challenge, strategic role, and a visible business or authority result.</p>
         </div>
@@ -2577,8 +2594,8 @@ html, body { overflow-x: clip; }
           <article class="case-card reveal">
             <div class="case-meta">Ecommerce / AI Shopping / USA</div>
             <h3>US Ecommerce Brand</h3>
-            <p>Prepared a US ecommerce brand for shopping in ChatGPT. Built and optimised the product feed to OpenAI&rsquo;s merchant specification, cleaned titles, descriptions, pricing, availability, and image data, and aligned product schema and page content so the catalog is eligible to surface when shoppers ask ChatGPT for product recommendations.</p>
-            <div class="case-tags"><span>ChatGPT Shopping</span><span>Product Feed</span><span>Ecommerce SEO</span><span>Product Schema</span><span>AI Commerce</span></div>
+            <p>Prepared a US ecommerce brand for shopping in ChatGPT: built the product feed to OpenAI&rsquo;s merchant spec, cleaned product data, and aligned product schema so the catalog can surface in ChatGPT recommendations.</p>
+            <div class="case-tags"><span>ChatGPT Shopping</span><span>Product Feed</span><span>Ecommerce SEO</span><span>Product Schema</span></div>
             <div class="case-result"><b>AI</b><span>Shopping ready</span></div>
           </article>
         </div>
@@ -3202,9 +3219,12 @@ html, body { overflow-x: clip; }
           sticky.appendChild(holder);
         }
         sticky.appendChild(grid);
-        sticky.appendChild(hint);
+        var controls = document.createElement("div");
+        controls.className = "hrail-controls";
+        controls.appendChild(hint);
+        controls.appendChild(arrowWrap);
         sticky.appendChild(bar);
-        sticky.appendChild(arrowWrap);
+        sticky.appendChild(controls);
         grid.classList.add("hrail");
 
         var CARD_STEP = 378;
