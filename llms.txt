@@ -1,0 +1,18 @@
+# Kamatham Premaswini
+
+> India-based Senior SEO and AI Search Strategist with 6+ years helping brands in the USA, UK, UAE, Australia, and India with technical SEO, GEO, AEO, content strategy, and ecommerce SEO. Contract Senior SEO and Content Manager with Rank AI Digital since 2019. Also known as Aswini.
+
+## Services
+- Technical SEO: crawl audits, Core Web Vitals, schema, site architecture, migrations, hreflang
+- SEO content strategy and content writing: topic clusters, briefs, website copy, blogs, LinkedIn content
+- AI search optimization: Generative Engine Optimization (GEO), Answer Engine Optimization (AEO), Google AI Overviews, ChatGPT, Gemini, Perplexity visibility
+- Local, international, and enterprise SEO, including YMYL and E-E-A-T
+- Ecommerce SEO, Google Merchant Center feeds, and ChatGPT Shopping product feeds
+- SEO analytics and reporting: GA4, Google Search Console, Looker Studio
+
+## Industries
+Healthcare, legal, education, SaaS, cybersecurity, renewable energy, wellness, home services, ecommerce
+
+## Links
+- Portfolio: https://premaswini.github.io/
+- LinkedIn: https://www.linkedin.com/in/k-premaswini
